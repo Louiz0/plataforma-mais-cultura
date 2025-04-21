@@ -3,13 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
-    <title>Divulgação Cultural</title>
+    <link rel="stylesheet" href="./styles/landing-page-style.css">
+
+    <title>+Cultura | Plataforma</title>
 </head>
 <body>
     <main class="landing-page">
         <div class="header">
-            <h1>Plataforma de Divulgação Cultural</h1>
+            <img id="logo" src="./images/logo.png" alt="Logo Plataforma MaisCultura">
+        </div>
+
+        <div class="initial-options">
+                <h1 id="welcome-text">Seja Bem Vindo!</h1>
+                
+                <button id="initial-login-button" onclick="showLogin()">Logar</button>
+                <button id="initial-register-button" onclick="showRegister()">Registrar</button>
+
+                <p id="paragrafo">ou se preferir</p>
+                <a href="main-page.html">
+                    <button id="guest-button">Entrar como visitante</button>
+                </a>
         </div>
 
         <div class="mainframe">
@@ -23,8 +36,11 @@
 
                 <h4 id="user-password-text">Senha</h4>
                 <input id="user-password-input" type="password">
+                
+                <button id="login-button" type="submit" value="submit">Login</button>
             </div>
         </div>
     </main>
+    <script src="./scripts/landing-page-script.js"></script>
 </body>
 </html>
