@@ -1,0 +1,39 @@
+* {
+    font-family: sans-serif;
+}
+body {
+    background-color: #EBFCFF;
+}
+
+.header {
+    width: 35%;
+    position: absolute;
+    top: 42%;
+    right: 52%;
+}
+
+.mainframe {
+    background-color: #87CCE9;
+    width: 500px;
+    padding-bottom: 20%;
+    position: absolute;
+    top: 8%;
+    right: 10%;
+    border-radius: 15px;
+}
+
+#login-title {
+    width: 145px;
+    margin: 0 auto;
+    padding-top: 30px;
+    font-size: 50px;
+}
+
+.user-info {
+    width: 350px;
+    margin: 0 auto;
+}
+
+#user-email-text, #user-password-text{
+    margin-bottom: 5px;
+}
