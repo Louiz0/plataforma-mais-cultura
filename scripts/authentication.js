@@ -3,7 +3,6 @@ const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-    // Registro
     document.getElementById('register-button')?.addEventListener('click', async () => {
         const email = document.getElementById('user-email-register-input').value;
         const password = document.getElementById('user-password-register-input').value;
