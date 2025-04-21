@@ -42,6 +42,7 @@ body {
     display: block;
     margin: 0 auto;
     text-decoration: none;
+    font-weight: bold;
 }
 
 #initial-login-button {
@@ -58,6 +59,24 @@ body {
     top: 8%;
     right: 10%;
     border-radius: 15px;
+}
+
+.register-frame {
+    display: none;
+    background-color: #87CCE9;
+    width: 25%;
+    padding-bottom: 3%;
+    position: absolute;
+    top: 8%;
+    right: 10%;
+    border-radius: 15px;
+}
+
+#register-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }
 
 #login-title {
@@ -85,7 +104,7 @@ body {
     margin-bottom: 0.3rem;
 }
 
-#user-email-input, #user-password-input, #login-button {
+#user-email-input, #user-password-input, #user-email-register-input, #user-password-register-input, #login-button, #register-button {
     width: 100%;
     padding: 0.75rem;
     border: 1px;
@@ -93,12 +112,12 @@ body {
     font-size: 1rem;
 }
 
-#login-button {
+#login-button, #register-button {
     margin-top: 3rem;
     font-size: 1.5rem;
 }
 
-#login-button:hover {
+#login-button:hover, #register-button:hover {
     cursor: pointer;
     background-color: #00A5E7;
     border: 2px solid black;
