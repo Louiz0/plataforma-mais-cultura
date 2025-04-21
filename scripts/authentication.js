@@ -17,6 +17,7 @@ const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
             alert('Erro ao registrar: ' + error.message);
         } else {
             alert('Registrado com sucesso! Efetue novo login.');
+            window.location.href = 'index.html';
         }
     });
 
