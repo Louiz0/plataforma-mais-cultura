@@ -16,11 +16,10 @@ const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
         if (error) {
             alert('Erro ao registrar: ' + error.message);
         } else {
-            alert('Registrado com sucesso! Verifique seu e-mail.');
+            alert('Registrado com sucesso! Efetue novo login.');
         }
     });
 
-    // Login (opcional)
     document.getElementById('login-button')?.addEventListener('click', async () => {
         const email = document.getElementById('user-email-input').value;
         const password = document.getElementById('user-password-input').value;
