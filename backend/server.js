@@ -16,23 +16,6 @@ const pool = new Pool({
     ssl: { rejectUnauthorized: false } // Importante pro Render
 });
 
-// Criação da tabela (executar uma vez)
-app.get("/init", async (req, res) => {
-    try {
-        await pool.query(`
-            CREATE TABLE IF NOT EXISTS users (
-                id SERIAL PRIMARY KEY,
-                email VARCHAR(255) UNIQUE NOT NULL,
-                password VARCHAR(255) NOT NULL
-            );
-        `);
-        res.send("Tabela criada com sucesso!");
-    } catch (err) {
-        console.error(err);
-        res.status(500).send("Erro ao criar tabela.");
-    }
-});
-
 // Registro
 app.post("/register", async (req, res) => {
     const { email, password } = req.body;
