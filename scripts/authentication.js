@@ -3,35 +3,38 @@ const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-    document.getElementById('register-button')?.addEventListener('click', async () => {
-        const email = document.getElementById('user-email-register-input').value;
-        const password = document.getElementById('user-password-register-input').value;
-      
-        const { data, error } = await supabaseClient.auth.signUp({ 
-            email, 
-            password 
-        });
-      
-        if (error) {
-            alert('Erro ao registrar: ' + error.message);
-        } else {
-            alert('Registrado com sucesso! Efetue novo login.');
-            window.location.href = 'index.html';
-        }
-    });
+document.getElementById('register-button')?.addEventListener('click', async () => {
+    const getName = document.getElementById('user-name-register-input').value;
+    const getEmail = document.getElementById('user-email-register-input').value;
+    const getPassword = document.getElementById('user-password-register-input').value;
 
-    document.getElementById('login-button')?.addEventListener('click', async () => {
-        const email = document.getElementById('user-email-input').value;
-        const password = document.getElementById('user-password-input').value;
-      
-        const { data, error } = await supabaseClient.auth.signInWithPassword({
-            email,
-            password
-        });
-      
-        if (error) {
-            alert('Erro ao fazer login: ' + error.message);
-        } else {
-            window.location.href = 'main-page.html';
-        }
-    });
+    const { error } = await supabaseClient
+        .from('ongs')
+        .insert({ name: getName, email: getEmail, password: getPassword });
+
+    if (error) {
+        alert('Erro ao registrar: ' + error.message);
+    } else {
+        alert('Registrado com sucesso! Efetue novo login.');
+        window.location.href = 'index.html';
+    }
+});
+
+document.getElementById('login-button').addEventListener('click', async () => {
+    const getEmail = document.getElementById('user-email-input').value;
+    const getPassword = document.getElementById('user-password-input').value;
+
+    const { data, error } = await supabaseClient
+    .from('ongs')
+    .select('*')
+    .eq('email', getEmail)
+    .eq('password', getPassword)
+    .single();
+
+    if (data) {
+        alert("Login realizado com sucesso");
+        window.location.href = 'main-page.html';
+    } else {
+        alert('Erro ao realizar o login: ' + (error ? error.message : 'Usuário ou senha incorretos.'));
+}
+});

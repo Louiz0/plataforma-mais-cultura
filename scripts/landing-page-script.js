@@ -15,4 +15,10 @@ window.onload = () => {
         initialOptions.style.display = 'none';
         registerForm.style.display = 'block';
     }
+
+    window.showInitialOptions = function () {
+        initialOptions.style.display = 'block';
+        registerForm.style.display = 'none';
+        loginForm.style.display = 'none';
+    }
 };

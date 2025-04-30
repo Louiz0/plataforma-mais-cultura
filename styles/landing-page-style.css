@@ -72,6 +72,7 @@ body {
 }
 
 #arrow-back {
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -194,7 +195,7 @@ body {
     font-weight: bold;
 }
 
-@media (max-width: 968px) {
+@media (max-width: 1000px) {
     #logo {
         position: static;
         display: block;
