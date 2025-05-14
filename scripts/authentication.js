@@ -33,7 +33,7 @@ document.getElementById('login-button').addEventListener('click', async () => {
 
     if (data) {
         alert("Login realizado com sucesso");
-        window.location.href = 'main-page.html';
+        window.location.href = 'ongs-main-page.html';
     } else {
         alert('Erro ao realizar o login: ' + (error ? error.message : 'Usuário ou senha incorretos.'));
 }
