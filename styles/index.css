@@ -143,7 +143,7 @@ body {
     margin-bottom: 0.1rem;
 }
 
-#user-email-input, #user-password-input, #user-email-register-input, #user-password-register-input, #user-name-register-input, #login-button, #register-button {
+#user-email-input, #user-password-input, #user-email-register-input, #user-cnpj-register-input,#user-password-register-input, #user-name-register-input, #login-button, #register-button {
     width: 100%;
     padding: 0.75rem;
     border: 1px;
