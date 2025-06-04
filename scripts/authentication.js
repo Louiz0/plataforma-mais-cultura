@@ -59,6 +59,22 @@ document.getElementById('register-button')?.addEventListener('click', async () =
         alert("CNPJ INVALIDO");
 
         return;
+    }    
+
+    const { data: userAlreadyExists } = await supabaseClient
+    .from('ongs')
+    .select('email, cnpj')
+    .or(`email.eq.${getEmail}, cnpj.eq.${getCnpj}`)
+    .maybeSingle();
+
+    if (userAlreadyExists) {
+        if (userAlreadyExists.email === getEmail) {
+            alert("Email ja cadastrado!");
+        } else {
+            alert("CNPJ já cadastrado.");
+        }
+
+        return
     }
 
     const { error } = await supabaseClient
