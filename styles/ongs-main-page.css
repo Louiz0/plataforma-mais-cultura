@@ -85,10 +85,29 @@ body {
 
 .page-main {
     margin: 1rem auto;
-    height: 35rem;
+    height: 50rem;
     width: 90%;
     border-radius: 1rem;
     background-color: #87CCE9;
+}
+
+.divs-panel {
+    margin: 2rem 4rem 4rem 4rem;
+    background-color: lightcoral;
+    height: 43rem;
+    width: 83%;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.div-post {
+    position: relative;
+    background-color: lightblue;
+    height: 15rem;
+    width: 15rem;
+    margin: 4rem;
 }
 
 @media (max-width: 1000px) {
