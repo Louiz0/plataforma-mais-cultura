@@ -89,14 +89,8 @@ body {
     width: 90%;
     border-radius: 1rem;
     background-color: #87CCE9;
-}
-
-.divs-panel {
-    margin: 2rem 4rem 4rem 4rem;
-    background-color: lightcoral;
-    height: 43rem;
-    width: 83%;
     position: absolute;
+    right: 6rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
