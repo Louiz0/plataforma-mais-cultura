@@ -22,6 +22,7 @@
             </div>
 
             <div class="header-right">
+                <button id="new-ong-post-button" onclick="showPostForm()">Nova publicação</button>
                 <form class="search-form" action="#">
                     <input type="text">
                     <button type="submit">
@@ -34,6 +35,22 @@
         </div>
     </header>
     <main>
+        <div class="new-post-frame">
+            <h4>Cadastro de Evento Cultural</h4>
+
+            <div class="new-post-frame-register">
+                <h3 id="new-post-frame-title-text">Titulo</h3>
+                <input id="new-post-frame-title" type="text">
+
+                <h3 id="new-post-frame-description-text">Descrição</h3>
+                <textarea name="post-description" id="new-post-frame-description-textarea" cols="170" rows="20"></textarea>
+            </div>
+
+            <div class="new-post-frame-footer">
+            <button id="create-post-button">Criar post</button>
+            </div>
+
+        </div>
         <div class="page-main">
             <div class="div-post"></div>
             <div class="div-post"></div>

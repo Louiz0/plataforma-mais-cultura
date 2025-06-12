@@ -3,8 +3,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    opacity: 0;
-    animation: fadeIn 2s forwards;
 }
 
 @keyframes fadeIn {
@@ -14,6 +12,8 @@
 }
 
 body {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
     background-color: #EBFCFF;
 }
 
@@ -102,6 +102,94 @@ body {
     height: 15rem;
     width: 15rem;
     margin: 4rem;
+}
+
+#new-ong-post-button {
+    background-color: #87CCE9;
+    width: 12rem;
+    height: 2.2rem;
+    padding: 0.3rem;
+    border: 1px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#new-ong-post-button:hover {
+    cursor: pointer;
+    background-color: #00A5E7;
+    border: 2px solid black;
+    transition: 250ms;
+}
+
+.new-post-frame {
+    opacity: 0;
+    animation: fadeIn 400ms forwards;
+    display: none;
+    background-color: #EBFCFF;
+    position: fixed;
+    z-index: 1;
+    left: 20%;
+    top: 20%;
+    width: 60%;
+    height: 70%;
+    border-radius: 10px;
+}
+
+.new-post-frame h4 {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.new-post-frame-register {
+    padding: 2rem;
+}
+
+#new-post-frame-title-text {
+    margin-bottom: 0.4rem;
+}
+
+#new-post-frame-description-text {
+    margin-top: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+#new-post-frame-description-textarea {
+    resize: none;
+    border-radius: 5px;
+    width: 100%;
+    padding: 0.6rem;
+}
+
+#new-post-frame-title {
+    border-radius: 5px;
+    width: 100%;
+    height: 3rem;
+    padding: 0.6rem;
+}
+
+#create-post-button {
+    width: 10rem;
+    height: 3rem;
+    cursor: pointer;
+    background-color: #87CCE9;
+    text-decoration: none;
+    border: 1px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.4rem
+}
+
+#create-post-button:hover {
+    transition: 250ms;
+    background-color: #00A5E7;
+    border: 2px solid black;
+}
+
+.new-post-frame-footer {
+    text-align: center;
 }
 
 @media (max-width: 1000px) {
