@@ -61,7 +61,7 @@ async function loadPosts() {
         postDiv.innerHTML = `
             ${imageHTML}
             <h3>${post.titulo}</h3>
-            <p>${post.descricao.substring(0, 20)}...</p>
+            <p>${post.descricao.substring(0, 30)}...</p>
         `;
         pageMain.appendChild(postDiv);
     });
