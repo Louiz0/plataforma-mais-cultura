@@ -5,16 +5,66 @@ const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 document.getElementById('create-post-button')?.addEventListener('click', async () => {
     const getTitle = document.getElementById('new-post-frame-title').value;
     const getDescription = document.getElementById('new-post-frame-description-textarea').value;
+    const getImage = document.getElementById('new-post-frame-image').files[0];
+
+    const fileName = `${Date.now()}-${getImage.name}`;
+    const { data: uploadData, error: uploadError } = await supabaseClient
+        .storage
+        .from('cultura-bucket')
+        .upload(fileName, getImage)
+
+        if (uploadError) {
+            alert("Erro ao importar imagem" + uploadError.message);
+        }
+
+        const { data: urlData} = await supabaseClient
+            .storage
+            .from('cultura-bucket')
+            .getPublicUrl(fileName);
+
+        imageUrl = urlData.publicUrl;
 
     const { error } = await supabaseClient
         .from('posts')
         .insert({
             titulo: getTitle,
-            descricao: getDescription
+            descricao: getDescription,
+            url_imagem: imageUrl
         });
     if (error) {
         alert('Erro' + error.message);
     } else {
         alert('Cadastrado com sucesso');
+        loadPosts();
     }
 });
+
+async function loadPosts() {
+    const { data: posts, error} = await supabaseClient
+        .from('posts')
+        .select('titulo, descricao, url_imagem')
+    
+    if (error) {
+        alert('Erro ao carregas posts motivo: ' + error);
+        return;
+    }
+
+    const pageMain = document.querySelector('.page-main');
+    pageMain.innerHTML = '';
+
+    posts.forEach(post => {
+        const postDiv = document.createElement('div');
+        postDiv.className = 'div-post';
+
+        const imageHTML = post.url_imagem ? `<img src="${post.url_imagem}" alt="${post.titulo}"` : "";
+
+        postDiv.innerHTML = `
+            ${imageHTML}
+            <h3>${post.titulo}</h3>
+            <p>${post.descricao.substring(0, 20)}...</p>
+        `;
+        pageMain.appendChild(postDiv);
+    });
+}
+
+window.addEventListener('DOMContentLoaded', loadPosts);
