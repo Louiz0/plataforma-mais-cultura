@@ -17,4 +17,10 @@ window.onload = () => {
         pageMain.style.filter = 'blur(0.3rem)';
     }
 
+    window.closePostForm = function () {
+        postForm.style.display = 'none';
+        header.style.filter = 'blur(0)';
+        pageMain.style.filter = 'blur(0)';
+    }
+
 }

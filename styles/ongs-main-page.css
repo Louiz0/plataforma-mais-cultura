@@ -158,8 +158,25 @@ body {
 
 .new-post-frame h4 {
     font-size: 2rem;
-    text-align: center;
     margin-top: 1rem;
+}
+
+#new-post-frame-header {
+    position: relative;
+    text-align: center;
+    align-items: center;
+}
+
+#close-icon {
+    position: absolute;
+    right: 1.5rem;
+    top: 20%;
+}
+
+#close-icon img {
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
 }
 
 .new-post-frame-register {
