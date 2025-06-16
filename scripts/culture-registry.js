@@ -7,6 +7,7 @@ document.getElementById('create-post-button')?.addEventListener('click', async (
     const getDescription = document.getElementById('new-post-frame-description-textarea').value;
     const getImage = document.getElementById('new-post-frame-image').files[0];
     const getCity = document.getElementById('new-post-frame-city').value;
+    const getDate = document.getElementById('new-post-frame-date').value;
 
     const fileName = `${Date.now()}-${getImage.name}`;
     const { data: uploadData, error: uploadError } = await supabaseClient
@@ -31,7 +32,8 @@ document.getElementById('create-post-button')?.addEventListener('click', async (
             titulo: getTitle,
             descricao: getDescription,
             url_imagem: imageUrl,
-            cidade: getCity
+            cidade: getCity,
+            data: getDate
         })
         .select('*')
         .single();
@@ -62,10 +64,10 @@ async function loadPosts() {
 
         const imageHTML = post.url_imagem ? `<img src="${post.url_imagem}" alt="${post.titulo}"` : "";
 
-        postDiv.innerHTML = `
+        postDiv.innerHTML = ` <a href="post-detail.html?id=${post.id}">
             ${imageHTML}
-            <h3><a href="post-detail.html?id=${post.id}">${post.titulo}</a></h3>
-            <p>${post.descricao.substring(0, 30)}...</p>
+            <h3>${post.titulo}</h3>
+            <p>${post.descricao.substring(0, 30)}...</p> </a>
         `;
         pageMain.appendChild(postDiv);
     });

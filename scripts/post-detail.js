@@ -20,3 +20,43 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 });
+
+async function loadInfo() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const postId = urlParams.get('id');
+    const { data: post, error } = await supabaseClient
+        .from('posts')
+        .select('id, cidade, data')
+        .eq('id', postId)
+        .single();
+
+    if (error) {
+        alert('Erro ao carregar posts: ' + error.message);
+        return;
+    }
+
+    const upperContainer = document.querySelector('#upper-container');
+
+    const postDiv = document.createElement('div');
+    postDiv.className = 'div-post';
+    postDiv.innerHTML = `<h4>Cidade </h4> <p>${post.cidade}</p>
+    <h4> Data </h4> <p>${post.data}</p>`;
+    upperContainer.appendChild(postDiv);
+}
+
+window.addEventListener('DOMContentLoaded', loadInfo);
+
+window.onload = () => {
+    const eventContainer = document.querySelector('#event-container');
+    const postContainerRight = document.querySelector('#post-container-right');
+
+    window.showEventContainer = function () {
+        eventContainer.style.display = 'flex';
+        postContainerRight.style.display = 'none';
+    }
+
+    window.closeEventContainer = function () {
+        eventContainer.style.display = 'none';
+        postContainerRight.style.display = 'block';
+    }
+}

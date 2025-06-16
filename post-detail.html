@@ -44,13 +44,27 @@
 
         <div id="post-container-right">
             <img id="post-image" alt="Imagem do post">
-            <button>EVENTOS</button>
+            <button onclick=showEventContainer()>EVENTOS</button>
             <button>CONTATO</button>
             <button>FOTOS</button>
         </div>
-    </div>
 
-    
+        <div id="event-container">
+            <h1>Evento</h1>
+
+            <div id="upper-container">
+                <h2>Info</h2>
+                <p>Informações da cultura acessada, é possível visualizar cidade e a data determinada pelo autor. Na seção inferior
+                    é habilitado a seção de comentários, na qual, podem ser postados.
+                </p>
+            </div>
+
+            <div id="lower-container">
+                <h2>Comentários</h2>
+            </div>
+
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <script src="./scripts/post-detail.js"></script>
