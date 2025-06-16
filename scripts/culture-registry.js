@@ -6,6 +6,7 @@ document.getElementById('create-post-button')?.addEventListener('click', async (
     const getTitle = document.getElementById('new-post-frame-title').value;
     const getDescription = document.getElementById('new-post-frame-description-textarea').value;
     const getImage = document.getElementById('new-post-frame-image').files[0];
+    const getCity = document.getElementById('new-post-frame-city').value;
 
     const fileName = `${Date.now()}-${getImage.name}`;
     const { data: uploadData, error: uploadError } = await supabaseClient
@@ -29,7 +30,8 @@ document.getElementById('create-post-button')?.addEventListener('click', async (
         .insert({
             titulo: getTitle,
             descricao: getDescription,
-            url_imagem: imageUrl
+            url_imagem: imageUrl,
+            cidade: getCity
         })
         .select('*')
         .single();

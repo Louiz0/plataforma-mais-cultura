@@ -1,0 +1,141 @@
+* {
+    font-family: 'product sans';
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 100%;
+    }
+}
+
+body {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    background-color: #EBFCFF;
+}
+
+.page-header {
+    margin-top: 0.5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    background-color: transparent;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#logo-image {
+    width: 15rem;
+}
+
+.header-text a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search-form input {
+    padding: 0.5rem 2.5rem 0.5rem 0.5rem;
+    font-size: 1rem;
+    border: 1.3px solid black;
+    border-radius: 0.5rem;
+    width: 15rem;
+}
+
+.search-form button {
+    position: absolute;
+    right: 0.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#search-image {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+#profile-image {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.post-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+#post-container-left {
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1rem 0 0 3rem;
+    height: auto;
+    min-height: 37rem;
+    width: 70%;
+    background-color: #87CCE9;
+}
+
+#post-container-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    padding: 1.5rem;
+    background-color: #87CCE9;
+    height: auto;
+    min-height: 37rem;
+    width: 20%;
+    margin: 1rem 0 0 2rem;
+    gap: 1rem;
+}
+
+#post-container-right img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 3rem;
+}
+
+#post-container-right button {
+    cursor: pointer;
+    width: 80%;
+    padding: 1rem;
+    border: 1px;
+    border-radius: 15px;
+    display: block;
+    margin: 0 auto;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#post-container-right button:hover {
+    background-color: #00A5E7;
+    border: 2px solid black;
+    transition: 200ms;
+}
