@@ -1,0 +1,119 @@
+* {
+    font-family: 'product sans';
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 100%;
+    }
+}
+
+body {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    background-color: #EBFCFF;
+}
+
+.page-header {
+    margin-top: 0.5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    background-color: transparent;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#logo-image {
+    width: 15rem;
+}
+
+.header-text a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search-form input {
+    padding: 0.5rem 2.5rem 0.5rem 0.5rem;
+    font-size: 1rem;
+    border: 1.3px solid black;
+    border-radius: 0.5rem;
+    width: 15rem;
+}
+
+.search-form button {
+    position: absolute;
+    right: 0.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#search-image {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+#profile-image {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.page-main {
+    border: 6px solid black;
+    margin: 1rem auto 2rem;
+    min-height: 48rem;
+    height: auto;
+    width: 90%;
+    border-radius: 1rem;
+    background-color: #87CCE9;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.post-div img {
+    position: relative;
+    background-color: lightblue;
+    height: 12rem;
+    width: 12rem;
+    margin: 4rem;
+    border-radius: 15px;
+}
+
+#close-icon {
+    position: absolute;
+    right: 7rem;
+    top: 20%;
+}
+
+#close-icon img {
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+}
