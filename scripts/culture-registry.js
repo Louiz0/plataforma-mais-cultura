@@ -24,13 +24,15 @@ document.getElementById('create-post-button')?.addEventListener('click', async (
 
         imageUrl = urlData.publicUrl;
 
-    const { error } = await supabaseClient
+    const { data: newPost, error } = await supabaseClient
         .from('posts')
         .insert({
             titulo: getTitle,
             descricao: getDescription,
             url_imagem: imageUrl
-        });
+        })
+        .select('*')
+        .single();
     if (error) {
         alert('Erro' + error.message);
     } else {
@@ -42,7 +44,7 @@ document.getElementById('create-post-button')?.addEventListener('click', async (
 async function loadPosts() {
     const { data: posts, error} = await supabaseClient
         .from('posts')
-        .select('titulo, descricao, url_imagem')
+        .select('id, titulo, descricao, url_imagem')
     
     if (error) {
         alert('Erro ao carregas posts motivo: ' + error);
@@ -60,7 +62,7 @@ async function loadPosts() {
 
         postDiv.innerHTML = `
             ${imageHTML}
-            <h3>${post.titulo}</h3>
+            <h3><a href="post-detail.html?id=${post.id}">${post.titulo}</a></h3>
             <p>${post.descricao.substring(0, 30)}...</p>
         `;
         pageMain.appendChild(postDiv);

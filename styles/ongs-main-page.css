@@ -81,6 +81,7 @@ body {
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .page-main {
@@ -145,15 +146,15 @@ body {
 .new-post-frame {
     border: 1px solid black;
     opacity: 0;
+    position: absolute;
     animation: fadeIn 400ms forwards;
     display: none;
     background-color: #EBFCFF;
-    position: fixed;
-    z-index: 1;
+    z-index: 11;
     left: 20%;
     top: 20%;
     width: 60%;
-    height: 70%;
+    height: auto;
     border-radius: 10px;
 }
 
@@ -252,6 +253,7 @@ body {
 }
 
 .new-post-frame-footer {
+    margin-bottom: 2rem;
     display: flex;
     justify-content: space-around;
 }
