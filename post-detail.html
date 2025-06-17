@@ -35,6 +35,34 @@
         </div>
     </header>
 
+        <div class="new-post-frame">
+            <div id="new-post-frame-header">
+                <h4>Edição de Evento Cultural</h4>
+                <a id="close-icon" onclick=closePostForm()>
+                    <img src="./images/close.png" alt="Botão de Fechar">
+                </a>
+            </div>
+            <div class="new-post-frame-register">
+                <h3 id="new-post-frame-title-text">Titulo</h3>
+                <input id="new-post-frame-title" type="text">
+
+                <h3 id="new-post-frame-description-text">Descrição</h3>
+                <textarea name="post-description" id="new-post-frame-description-textarea" cols="170" rows="15"></textarea>
+
+                <h3 id="new-post-frame-city-text">Cidade do evento</h3>
+                <input id="new-post-frame-city" type="text">
+
+                <h3 id="new-post-frame-date-text">Data do evento</h3>
+                <input id="new-post-frame-date" type="date">
+            </div>
+
+            <div class="new-post-frame-footer">
+                <button id="new-post-frame-delete-button">Excluir post</button>
+                <button id="edit-post-button">Editar Post</button>
+            </div>
+
+        </div>
+
     <div class="post-container">
         <div id="post-container-left">
             <h1 id="post-title"></h1>
@@ -70,5 +98,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <script src="./scripts/post-detail.js"></script>
+    <script src="./scripts/culture-edit.js"></script>
 </body>
 </html>

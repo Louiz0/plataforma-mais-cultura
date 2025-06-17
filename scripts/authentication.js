@@ -102,6 +102,7 @@ document.getElementById('login-button').addEventListener('click', async () => {
 
     if (data) {
         alert("Login realizado com sucesso");
+        localStorage.setItem('ong_id', data.id);
         window.location.href = 'ongs-main-page.html';
     } else {
         alert('Erro ao realizar o login: ' + (error ? error.message : 'Usuário ou senha incorretos.'));

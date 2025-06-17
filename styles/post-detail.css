@@ -192,3 +192,120 @@ body {
     border: 2px solid black;
     transition: 200ms;
 }
+
+.new-post-frame {
+    border: 1px solid black;
+    opacity: 0;
+    position: absolute;
+    animation: fadeIn 400ms forwards;
+    display: none;
+    background-color: #EBFCFF;
+    z-index: 11;
+    left: 20%;
+    top: 10%;
+    width: 60%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.new-post-frame h4 {
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+#new-post-frame-header {
+    position: relative;
+    text-align: center;
+    align-items: center;
+}
+
+#close-icon {
+    position: absolute;
+    right: 1.5rem;
+    top: 20%;
+}
+
+#close-icon img {
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+}
+
+.new-post-frame-register {
+    padding: 2rem;
+}
+
+#new-post-frame-title-text {
+    margin-bottom: 0.4rem;
+}
+
+#new-post-frame-description-text, #new-post-frame-city-text, #new-post-frame-date-text {
+    margin-top: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+#new-post-frame-description-textarea {
+    resize: none;
+    border-radius: 5px;
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 1rem;
+}
+
+#new-post-frame-title, #new-post-frame-city {
+    border-radius: 5px;
+    width: 100%;
+    height: 3rem;
+    padding: 0.6rem;
+    font-size: 1rem;
+}
+
+#new-post-frame-date {
+    border-radius: 5px;
+    width: 20%;
+    height: 3rem;
+    padding: 0.6rem;
+    font-size: 1rem;
+}
+
+#new-post-frame-delete-button:hover {
+    transition: 250ms;
+    background-color: red;
+    border: 2px solid black;
+}
+
+#new-post-frame-delete-button {
+    width: 10rem;
+    height: 3rem;
+    cursor: pointer;
+    background-color: lightcoral;
+    text-decoration: none;
+    border: 1px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.4rem
+}
+
+#edit-post-button {
+    width: 10rem;
+    height: 3rem;
+    cursor: pointer;
+    background-color: #87CCE9;
+    text-decoration: none;
+    border: 1px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.4rem
+}
+
+#edit-post-button:hover {
+    transition: 250ms;
+    background-color: #00A5E7;
+    border: 2px solid black;
+}
+
+.new-post-frame-footer {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-around;
+}

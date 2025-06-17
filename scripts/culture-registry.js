@@ -26,6 +26,12 @@ document.getElementById('create-post-button')?.addEventListener('click', async (
 
         imageUrl = urlData.publicUrl;
 
+        const ongId = localStorage.getItem('ong_id');
+        if (!ongId) {
+            alert('ONG não identificada!');
+            return;
+        }
+
     const { data: newPost, error } = await supabaseClient
         .from('posts')
         .insert({
@@ -33,7 +39,8 @@ document.getElementById('create-post-button')?.addEventListener('click', async (
             descricao: getDescription,
             url_imagem: imageUrl,
             cidade: getCity,
-            data: getDate
+            data: getDate,
+            ong_id: ongId
         })
         .select('*')
         .single();
