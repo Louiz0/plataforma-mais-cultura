@@ -1,0 +1,58 @@
+* {
+    font-family: 'product sans';
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 100%;
+    }
+}
+
+body {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    background-color: #EBFCFF;
+}
+
+.page-header {
+    margin-top: 0.5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    background-color: transparent;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+#logo-image {
+    width: 15rem;
+}
+
+.header-text a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.page-main {
+    border: 6px solid black;
+    margin: 1rem auto 2rem;
+    min-height: 35rem;
+    height: auto;
+    width: 60%;
+    border-radius: 1rem;
+    background-color: #87CCE9;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

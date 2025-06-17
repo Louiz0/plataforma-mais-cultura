@@ -9,6 +9,7 @@ const postContainerRight = document.querySelector('#post-container-right');
 const postForm = document.querySelector('.new-post-frame');
 const header = document.querySelector('.page-header');
 const pageMain = document.querySelector('.post-container');
+const contactContainer = document.querySelector('#contact-container');
 
 document.addEventListener('DOMContentLoaded', async () => {
     await loadPostData();
@@ -23,7 +24,7 @@ async function loadPostData() {
         .from('posts')
         .select('*')
         .eq('id', postId)
-        .single();
+        .single();   
 
     if (post) {
         currentPost = post;
@@ -76,6 +77,24 @@ async function loadInfo() {
         <p>${currentPost.data}</p>
     `;
     upperContainer.appendChild(postDiv);
+
+    const { data: ong } = await supabaseClient
+    .from('ongs')
+    .select('name, email')
+    .eq('id', currentPost.ong_id)
+    .single();
+
+    const contactUpperContainer = document.querySelector('#contact-upper-container');
+
+    const postContactDiv = document.createElement('contact-div');
+    postContactDiv.classname = 'contact-div-post';
+    postContactDiv.innerHTML = `
+        <h4>ONG:</h4>
+        <p>${ong.name}</p>
+        <h4>E-mail</h4>
+        <p>${ong.email}</p>
+    `;
+    contactUpperContainer.appendChild(postContactDiv);
 }
 
 window.onload = () => {
@@ -86,6 +105,16 @@ window.onload = () => {
 
     window.closeEventContainer = function () {
         eventContainer.style.display = 'none';
+        postContainerRight.style.display = 'flex';
+    }
+
+    window.showContactContainer = function () {
+        contactContainer.style.display = 'flex';
+        postContainerRight.style.display = 'none';
+    }
+
+    window.closeContactContainer = function () {
+        contactContainer.style.display = 'none';
         postContainerRight.style.display = 'flex';
     }
 

@@ -72,15 +72,17 @@
         <div id="post-container-right">
             <img id="post-image" alt="Imagem do post">
             <button onclick=showEventContainer()>EVENTOS</button>
-            <button>CONTATO</button>
+            <button onclick=showContactContainer()>CONTATO</button>
             <button onclick=photoPageRedirect()>FOTOS</button>
         </div>
 
         <div id="event-container">
-            <h1>Evento</h1>
-            <a id="arrow-back" onclick=closeEventContainer()>
-                <img src="./images/arrow-back.png" alt="Seta de voltar">
-            </a>
+            <div class="event-header">
+                <h1>Evento</h1>
+                <a id="arrow-back" onclick=closeEventContainer()>
+                    <img src="./images/arrow-back.png" alt="Seta de voltar">
+                </a>
+            </div>
             
             <div id="upper-container">
                 <h2>Info</h2>
@@ -93,6 +95,21 @@
                 <h2>Comentários</h2>
             </div>
 
+        </div>
+
+        <div id="contact-container">
+            <div class="contact-header">
+                <h1>Contato</h1>
+                <a id="arrow-back" onclick=closeContactContainer()>
+                    <img src="./images/arrow-back.png" alt="Seta de voltar">
+                </a>
+            </div>
+            
+            <div id="contact-upper-container">
+                <h2>Info</h2>
+                <p>Nas informações abaixo é possível consultar os dados da ONG criadora do post da cultura.
+                </p>
+            </div>
         </div>
     </div>
 

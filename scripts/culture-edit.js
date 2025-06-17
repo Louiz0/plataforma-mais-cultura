@@ -1,11 +1,10 @@
-const urlParams = new URLSearchParams(window.location.search);
-const postId = urlParams.get('id');
-const getTitle = document.getElementById('new-post-frame-title').value;
-const getDescription = document.getElementById('new-post-frame-description-textarea').value;
-const getCity = document.getElementById('new-post-frame-city').value;
-const getDate = document.getElementById('new-post-frame-date').value;
-
 document.getElementById('edit-post-button')?.addEventListener('click', async () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const postId = urlParams.get('id');
+    const getTitle = document.getElementById('new-post-frame-title').value;
+    const getDescription = document.getElementById('new-post-frame-description-textarea').value;
+    const getCity = document.getElementById('new-post-frame-city').value;
+    const getDate = document.getElementById('new-post-frame-date').value;
     const { error } = await supabaseClient
         .from('posts')
         .update({
@@ -24,6 +23,8 @@ document.getElementById('edit-post-button')?.addEventListener('click', async () 
 });
 
 document.getElementById('new-post-frame-delete-button')?.addEventListener('click', async () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const postId = urlParams.get('id');
     const { error } = await supabaseClient
         .from('posts')
         .delete()
