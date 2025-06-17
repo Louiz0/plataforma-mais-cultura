@@ -57,6 +57,10 @@ window.onload = () => {
 
     window.closeEventContainer = function () {
         eventContainer.style.display = 'none';
-        postContainerRight.style.display = 'block';
+        postContainerRight.style.display = 'flex';
+    }
+
+    window.photoPageRedirect = function () {
+    window.location.href = 'photos.html';
     }
 }

@@ -45,14 +45,15 @@
             <img id="post-image" alt="Imagem do post">
             <button onclick=showEventContainer()>EVENTOS</button>
             <button>CONTATO</button>
-            <button>
-                <a href="./photos.html">FOTOS</a>
-            </button>
+            <button onclick=photoPageRedirect()>FOTOS</button>
         </div>
 
         <div id="event-container">
             <h1>Evento</h1>
-
+            <a id="arrow-back" onclick=closeEventContainer()>
+                <img src="./images/arrow-back.png" alt="Seta de voltar">
+            </a>
+            
             <div id="upper-container">
                 <h2>Info</h2>
                 <p>Informações da cultura acessada, é possível visualizar cidade e a data determinada pelo autor. Na seção inferior

@@ -130,6 +130,23 @@ body {
     right: 5%;
 }
 
+#arrow-back {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    margin: 0;
+    width: auto;
+    height: auto;
+}
+
+#arrow-back img {
+    width: 2rem;
+    height: auto;
+    display: block;
+}
+
 #event-container h1 {
     margin-bottom: 0.5rem;
 }
