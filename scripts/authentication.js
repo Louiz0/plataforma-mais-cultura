@@ -56,8 +56,7 @@ document.getElementById('register-button')?.addEventListener('click', async () =
     const getCnpj = document.getElementById('user-cnpj-register-input').value
 
     if (!cnpjValidation(getCnpj)) {
-        alert("CNPJ INVALIDO");
-
+        notifications.show("CNPJ digitado não é valido!", "warning");
         return;
     }    
 
@@ -69,9 +68,9 @@ document.getElementById('register-button')?.addEventListener('click', async () =
 
     if (userAlreadyExists) {
         if (userAlreadyExists.email === getEmail) {
-            alert("Email ja cadastrado!");
+            notifications.show("O e-mail inserido já está cadastrado.", "warning");
         } else {
-            alert("CNPJ já cadastrado.");
+            notifications.show("O CNPJ inserido já está cadastrado", "warning");
         }
 
         return
@@ -82,9 +81,9 @@ document.getElementById('register-button')?.addEventListener('click', async () =
         .insert({ name: getName, email: getEmail, password: getPassword, cnpj: getCnpj });
 
     if (error) {
-        alert('Erro ao registrar: ' + error.message);
+        notifications.show("Erro ao realizar o cadastro, motivo: " + error.message, "error");
     } else {
-        alert('Registrado com sucesso! Efetue novo login.');
+        notifications.show("ONG registrada com sucesso. Favor realizar o login!", "success");
         window.location.href = 'index.html';
     }
 });
@@ -101,10 +100,10 @@ document.getElementById('login-button').addEventListener('click', async () => {
     .single();
 
     if (data) {
-        alert("Login realizado com sucesso");
+        notifications.show("Login realizado com sucesso", "success");
         localStorage.setItem('ong_id', data.id);
         window.location.href = 'ongs-main-page.html';
     } else {
-        alert('Erro ao realizar o login: ' + (error ? error.message : 'Usuário ou senha incorretos.'));
-}
+        notifications.show('Erro ao realizar o login: usuário ou senha incorretos.', "error");
+    }
 });

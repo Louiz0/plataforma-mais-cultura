@@ -117,3 +117,10 @@ body {
     height: 1.5rem;
     cursor: pointer;
 }
+
+@media (max-width: 1367px) {
+    .post-div img {
+        height: 10rem;
+        width: 10rem;
+    }
+}

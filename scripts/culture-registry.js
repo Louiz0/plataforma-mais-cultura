@@ -8,6 +8,12 @@ document.getElementById('create-post-button')?.addEventListener('click', async (
     const getImage = document.getElementById('new-post-frame-image').files[0];
     const getCity = document.getElementById('new-post-frame-city').value;
     const getDate = document.getElementById('new-post-frame-date').value;
+    const ongId = localStorage.getItem('ong_id');
+
+    if (!ongId) {
+        notifications.show("ONG não identificada, visitantes não podem criar posts!", "warning");
+        return;
+    }
 
     const fileName = `${Date.now()}-${getImage.name}`;
     const { data: uploadData, error: uploadError } = await supabaseClient
@@ -16,7 +22,7 @@ document.getElementById('create-post-button')?.addEventListener('click', async (
         .upload(fileName, getImage)
 
         if (uploadError) {
-            alert("Erro ao importar imagem" + uploadError.message);
+            notifications.show("Erro ao importar imagem, motivo: " + uploadError.message, "error");
         }
 
         const { data: urlData} = await supabaseClient
@@ -26,11 +32,6 @@ document.getElementById('create-post-button')?.addEventListener('click', async (
 
         imageUrl = urlData.publicUrl;
 
-        const ongId = localStorage.getItem('ong_id');
-        if (!ongId) {
-            alert('ONG não identificada!');
-            return;
-        }
 
     const { data: newPost, error } = await supabaseClient
         .from('posts')
@@ -45,9 +46,10 @@ document.getElementById('create-post-button')?.addEventListener('click', async (
         .select('*')
         .single();
     if (error) {
-        alert('Erro' + error.message);
+        notifications.show("Erro ao criar posts, motivo: " + error.message, "error");
     } else {
-        alert('Cadastrado com sucesso');
+        notifications.show("Post criado com sucesso!", "success");
+        closePostForm();
         loadPosts();
     }
 });
@@ -58,7 +60,7 @@ async function loadPosts() {
         .select('id, titulo, descricao, url_imagem')
     
     if (error) {
-        alert('Erro ao carregas posts motivo: ' + error);
+        notifications.show('Erro ao carregar posts, motivo: ' + error, "error");
         return;
     }
 
@@ -74,7 +76,7 @@ async function loadPosts() {
         postDiv.innerHTML = ` <a href="post-detail.html?id=${post.id}">
             ${imageHTML}
             <h3>${post.titulo}</h3>
-            <p>${post.descricao.substring(0, 30)}...</p> </a>
+            <p>${post.descricao.substring(0, 25)}...</p> </a>
         `;
         pageMain.appendChild(postDiv);
     });

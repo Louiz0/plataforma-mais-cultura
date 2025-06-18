@@ -15,9 +15,9 @@ document.getElementById('edit-post-button')?.addEventListener('click', async () 
         })
         .eq('id', postId);
     if (error) {
-        alert('Erro' + error.message);
+        notifications.show('Erro ao editar a postagem, motivo: ' + error.message, 'error');
     } else {
-        alert('Editado com sucesso!');
+        notifications.show('Postagem editada com sucesso!', 'success');
         window.location.reload();
     }
 });
@@ -31,9 +31,9 @@ document.getElementById('new-post-frame-delete-button')?.addEventListener('click
         .eq('id', postId);
 
     if (error) {
-        alert('Erro');
+        notifications.show('Erro ao excluir postagem, motivo: ' + error.message, 'error');
     } else {
-        alert('Post excluido com sucesso!');
+        notifications.show('Postagem excluida com sucesso!', 'success');
         window.location.href = 'ongs-main-page.html';
     }
 });
