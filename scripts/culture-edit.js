@@ -5,6 +5,12 @@ document.getElementById('edit-post-button')?.addEventListener('click', async () 
     const getDescription = document.getElementById('new-post-frame-description-textarea').value;
     const getCity = document.getElementById('new-post-frame-city').value;
     const getDate = document.getElementById('new-post-frame-date').value;
+
+    if (!getTitle || !getDescription || !getCity || !getDate) {
+        notifications.show("Por favor, preencha todos os campos obrigatórios!", "warning");
+        return;
+    }
+
     const { error } = await supabaseClient
         .from('posts')
         .update({

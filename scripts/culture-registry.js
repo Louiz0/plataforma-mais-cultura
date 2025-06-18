@@ -10,8 +10,27 @@ document.getElementById('create-post-button')?.addEventListener('click', async (
     const getDate = document.getElementById('new-post-frame-date').value;
     const ongId = localStorage.getItem('ong_id');
 
+    if (!getTitle || !getDescription || !getImage || !getCity || !getDate) {
+        notifications.show("Por favor, preencha todos os campos obrigatórios!", "warning");
+        return;
+    }
+
     if (!ongId) {
         notifications.show("ONG não identificada, visitantes não podem criar posts!", "warning");
+        return;
+    }
+
+    const MAX_FILE_SIZE = 4 * 1024 * 1024;
+    if (getImage.size > MAX_FILE_SIZE) {
+        notifications.show("O tamanho da imagem não pode exceder 4MB!", "error");
+        return;
+    }
+
+    const originalFileName = getImage.name;
+    const validFileNameRegex = /^[a-zA-Z0-9_.-]+$/;
+    
+    if (!validFileNameRegex.test(originalFileName)) {
+        notifications.show("O nome do arquivo não pode conter espaços ou caracteres especiais!", "error");
         return;
     }
 

@@ -51,40 +51,53 @@ function cnpjValidation(cnpj) {
 
 document.getElementById('register-button')?.addEventListener('click', async () => {
     const getName = document.getElementById('user-name-register-input').value;
-    const getEmail = document.getElementById('user-email-register-input').value;
+    const getEmail = document.getElementById('user-email-register-input').value.trim();
     const getPassword = document.getElementById('user-password-register-input').value;
-    const getCnpj = document.getElementById('user-cnpj-register-input').value
+    const getCnpj = document.getElementById('user-cnpj-register-input').value.replace(/[^\d]+/g, '');
 
+    // Validação do CNPJ
     if (!cnpjValidation(getCnpj)) {
-        notifications.show("CNPJ digitado não é valido!", "warning");
+        notifications.show("CNPJ digitado não é válido!", "warning");
         return;
-    }    
-
-    const { data: userAlreadyExists } = await supabaseClient
-    .from('ongs')
-    .select('email, cnpj')
-    .or(`email.eq.${getEmail}, cnpj.eq.${getCnpj}`)
-    .maybeSingle();
-
-    if (userAlreadyExists) {
-        if (userAlreadyExists.email === getEmail) {
-            notifications.show("O e-mail inserido já está cadastrado.", "warning");
-        } else {
-            notifications.show("O CNPJ inserido já está cadastrado", "warning");
-        }
-
-        return
     }
 
-    const { error } = await supabaseClient
-        .from('ongs')
-        .insert({ name: getName, email: getEmail, password: getPassword, cnpj: getCnpj });
+    try {
+        // Verifica se e-mail ou CNPJ já existem
+        const { data: existingUser, error: queryError } = await supabaseClient
+            .from('ongs')
+            .select('email, cnpj')
+            .or(`email.eq.${getEmail},cnpj.eq.${getCnpj}`)
+            .maybeSingle();
 
-    if (error) {
-        notifications.show("Erro ao realizar o cadastro, motivo: " + error.message, "error");
-    } else {
+        if (queryError) throw queryError;
+
+        if (existingUser) {
+            if (existingUser.email === getEmail) {
+                notifications.show("O e-mail inserido já está cadastrado.", "warning");
+            } else {
+                notifications.show("O CNPJ inserido já está cadastrado", "warning");
+            }
+            return;
+        }
+
+        // Cadastra o novo usuário
+        const { error: insertError } = await supabaseClient
+            .from('ongs')
+            .insert({ 
+                name: getName, 
+                email: getEmail, 
+                password: getPassword, 
+                cnpj: getCnpj 
+            });
+
+        if (insertError) throw insertError;
+
         notifications.show("ONG registrada com sucesso. Favor realizar o login!", "success");
         window.location.href = 'index.html';
+        
+    } catch (error) {
+        console.error('Erro no cadastro:', error);
+        notifications.show("Erro ao realizar o cadastro: " + error.message, "error");
     }
 });
 

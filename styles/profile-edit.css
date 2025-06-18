@@ -56,3 +56,102 @@ body {
     flex-wrap: wrap;
     justify-content: center;
 }
+
+.login-container {
+    width: 80%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.form-group input {
+    padding: 0.8rem;
+    border: 2px solid #000;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+.upload-container {
+    display: flex;
+    justify-content: center;
+}
+
+.upload-btn {
+    padding: 0.8rem 2rem;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.upload-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.submit-btn {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #333;
+}
+
+/* Adicione isso no final do arquivo CSS */
+.logoff-btn {
+    padding: 0.5rem 1rem;
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.logoff-btn:hover {
+    background-color: #cc0000;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
