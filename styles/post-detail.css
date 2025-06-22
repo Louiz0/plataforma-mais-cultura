@@ -124,7 +124,7 @@ body {
     padding: 1.5rem;
     background-color: #87CCE9;
     height: auto;
-    min-height: 37rem;
+    min-height: 26rem;
     width: 20%;
     margin: 1rem 0 0 2rem;
     right: 5%;
@@ -214,10 +214,6 @@ body {
     border-radius: 5px;
     margin-bottom: 3rem;
     border: 5px solid white;
-}
-
-#lower-container {
-    margin-top: 1rem;
 }
 
 #post-container-right button {

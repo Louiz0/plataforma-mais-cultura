@@ -109,7 +109,7 @@ body {
 #close-icon {
     position: absolute;
     right: 7rem;
-    top: 20%;
+    top: 13%;
 }
 
 #close-icon img {
@@ -122,5 +122,9 @@ body {
     .post-div img {
         height: 10rem;
         width: 10rem;
+    }
+
+    #close-icon {
+        top: 25%;
     }
 }
