@@ -1,8 +1,3 @@
-const supabaseClient = supabase.createClient(
-    window.appConfig.SUPABASE_URL,
-    window.appConfig.SUPABASE_ANON_KEY
-);
-
 function cnpjValidation(cnpj) {
     cnpj = cnpj.replace(/[^\d]+/g, '');
 
