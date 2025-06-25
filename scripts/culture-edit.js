@@ -11,6 +11,22 @@ document.getElementById('edit-post-button')?.addEventListener('click', async () 
         return;
     }
 
+    if (!ongId) {
+        notifications.show("ONG não identificada, visitantes não podem criar posts!", "warning");
+        return;
+    }
+
+    const dateToday = new Date();
+    const day = String(dateToday.getDate()).padStart(2, '0');
+    const month = String(dateToday.getMonth() + 1).padStart(2, '0');
+    const year = dateToday.getFullYear();
+    const formatado = `${year}-${month}-${day}`;
+
+    if (formatado > getDate) {
+        notifications.show("A data não pode ser passada.");
+        return;
+    }
+
     const { error } = await supabaseClient
         .from('posts')
         .update({
