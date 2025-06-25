@@ -5,6 +5,7 @@ document.getElementById('edit-post-button')?.addEventListener('click', async () 
     const getDescription = document.getElementById('new-post-frame-description-textarea').value;
     const getCity = document.getElementById('new-post-frame-city').value;
     const getDate = document.getElementById('new-post-frame-date').value;
+    const ongId = localStorage.getItem('ong_id');
 
     if (!getTitle || !getDescription || !getCity || !getDate) {
         notifications.show("Por favor, preencha todos os campos obrigatórios!", "warning");
