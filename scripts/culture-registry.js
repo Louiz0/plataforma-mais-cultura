@@ -30,6 +30,18 @@ document.getElementById('create-post-button')?.addEventListener('click', async (
         return;
     }
 
+    const dateToday = new Date();
+    const day = String(dateToday.getDate()).padStart(2, '0');
+    const month = String(dateToday.getMonth() + 1).padStart(2, '0');
+    const year = dateToday.getFullYear();
+    const formatado = `${year}-${month}-${day}`;
+
+    if (formatado > getDate) {
+        notifications.show("A data não pode ser passada.");
+        return;
+    }
+    
+
     const fileName = `${Date.now()}-${getImage.name}`;
     const { data: uploadData, error: uploadError } = await supabaseClient
         .storage
