@@ -54,20 +54,6 @@ function addEditButton(postId) {
     }
 }
 
-function editPost(postId) {
-    editPostFrame.style.display = 'block';
-    header.style.filter = 'blur(0.3rem)';
-    pageMain.style.filter = 'blur(0.3rem)';
-
-    document.getElementById('new-post-frame-title').value = currentPost.titulo;
-    document.getElementById('new-post-frame-description-textarea').value = currentPost.descricao;
-    document.getElementById('new-post-frame-city').value = currentPost.cidade;
-
-    const dateObj = new Date(currentPost.data);
-    const formattedDate = dateObj.toISOString().split('T')[0];
-    document.getElementById('new-post-frame-date').value = formattedDate;
-}
-
 async function loadInfo() {
     if (!currentPost) return;
     

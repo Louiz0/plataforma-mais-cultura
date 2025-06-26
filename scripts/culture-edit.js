@@ -1,10 +1,10 @@
 document.getElementById('edit-post-button')?.addEventListener('click', async () => {
     const urlParams = new URLSearchParams(window.location.search);
     const postId = urlParams.get('id');
-    const getTitle = document.getElementById('new-post-frame-title').value;
-    const getDescription = document.getElementById('new-post-frame-description-textarea').value;
-    const getCity = document.getElementById('new-post-frame-city').value;
-    const getDate = document.getElementById('new-post-frame-date').value;
+    const getTitle = document.getElementById('edit-post-frame-title').value;
+    const getDescription = document.getElementById('edit-post-frame-description-textarea').value;
+    const getCity = document.getElementById('edit-post-frame-city').value;
+    const getDate = document.getElementById('edit-post-frame-date').value;
     const ongId = localStorage.getItem('ong_id');
 
     if (!getTitle || !getDescription || !getCity || !getDate) {
@@ -45,7 +45,7 @@ document.getElementById('edit-post-button')?.addEventListener('click', async () 
     }
 });
 
-document.getElementById('new-post-frame-delete-button')?.addEventListener('click', async () => {
+document.getElementById('edit-post-frame-delete-button')?.addEventListener('click', async () => {
     const urlParams = new URLSearchParams(window.location.search);
     const postId = urlParams.get('id');
     const { error } = await supabaseClient
@@ -60,3 +60,17 @@ document.getElementById('new-post-frame-delete-button')?.addEventListener('click
         window.location.href = 'ongs-main-page.html';
     }
 });
+
+function editPost(postId) {
+    editPostFrame.style.display = 'block';
+    header.style.filter = 'blur(0.3rem)';
+    pageMain.style.filter = 'blur(0.3rem)';
+
+    document.getElementById('edit-post-frame-title').value = currentPost.titulo;
+    document.getElementById('edit-post-frame-description-textarea').value = currentPost.descricao;
+    document.getElementById('edit-post-frame-city').value = currentPost.cidade;
+
+    const dateObj = new Date(currentPost.data);
+    const formattedDate = dateObj.toISOString().split('T')[0];
+    document.getElementById('edit-post-frame-date').value = formattedDate;
+}
