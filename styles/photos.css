@@ -22,7 +22,6 @@ body {
     height: 5rem;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 0 2rem;
     background-color: transparent;
 }
@@ -92,9 +91,6 @@ body {
     width: 90%;
     border-radius: 1rem;
     background-color: #87CCE9;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
 .post-div img {
@@ -109,7 +105,7 @@ body {
 #close-icon {
     position: absolute;
     right: 7rem;
-    top: 13%;
+    top: 15%;
 }
 
 #close-icon img {
@@ -125,6 +121,6 @@ body {
     }
 
     #close-icon {
-        top: 25%;
+        top: 15%;
     }
 }

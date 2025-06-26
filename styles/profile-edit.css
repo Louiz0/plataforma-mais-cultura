@@ -22,7 +22,6 @@ body {
     height: 5rem;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 0 2rem;
     background-color: transparent;
 }
@@ -53,7 +52,6 @@ body {
     border-radius: 1rem;
     background-color: #87CCE9;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -68,7 +66,6 @@ body {
 .login-header h1 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    text-align: center;
 }
 
 .login-form {
@@ -109,7 +106,6 @@ body {
     border-radius: 0.5rem;
     font-size: 1rem;
     cursor: pointer;
-    transition: all 0.3s;
 }
 
 .upload-btn:hover {
@@ -133,7 +129,6 @@ body {
     background-color: #333;
 }
 
-/* Adicione isso no final do arquivo CSS */
 .logoff-btn {
     padding: 0.5rem 1rem;
     background-color: #ff4444;
@@ -143,7 +138,6 @@ body {
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: all 0.3s;
 }
 
 .logoff-btn:hover {
