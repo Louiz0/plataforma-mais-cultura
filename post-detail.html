@@ -1,119 +1,143 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/post-detail.css">
-    <link rel="stylesheet" href="./styles/notifications.css">
-    <link href="https://fonts.cdnfonts.com/css/product-sans" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Import da estilização da página -->
+    <link rel="stylesheet" href="./styles/post-detail.css" />
+    <link rel="stylesheet" href="./styles/notifications.css" />
+    <link href="https://fonts.cdnfonts.com/css/product-sans" rel="stylesheet" />
+    <link rel="icon" type="x-icon" href="./images/logo-simples.png" />
+    <!-- Icone da página -->
 
     <title>+Cultura | Post</title>
-    <link rel="icon" type="x-icon" href="./images/logo-simples.png">
-</head>
-<body>
+  </head>
+  <body>
+    <!-- Header padrão das páginas, contém a logo, botão para voltar a Home, barra de pesquisa e perfil do usuário -->
     <header>
-        <div class="page-header">
-            <div class="header-left">
-                <div class="div-logo-image">
-                    <img id="logo-image" src="./images/logo.png" alt="Logo +Cultura;">
-                </div>
-                <div class="header-text">
-                    <a href="ongs-main-page.html">Home</a>
-                </div>
-            </div>
-
-            <div class="header-right">
-                <form class="search-form" action="#">
-                    <input type="text">
-                    <button type="submit">
-                        <img id="search-image" src="./images/search-image.png" alt="Buscar">
-                    </button>
-                </form>
-                <a id="profile-href" href="/profile-edit.html">
-                    <img id="profile-image" src="./images/profile-image.png" alt="Imagem do Perfil">
-                </a>
-            </div>
+      <div class="page-header">
+        <div class="header-left">
+          <div class="div-logo-image">
+            <img id="logo-image" src="./images/logo.png" alt="Logo +Cultura;" />
+          </div>
+          <div class="header-text">
+            <a href="ongs-main-page.html">Home</a>
+          </div>
         </div>
+
+        <div class="header-right">
+          <form class="search-form" action="#">
+            <input type="text" />
+            <button type="submit">
+              <img
+                id="search-image"
+                src="./images/search-image.png"
+                alt="Buscar"
+              />
+            </button>
+          </form>
+          <a id="profile-href" href="/profile-edit.html">
+            <img
+              id="profile-image"
+              src="./images/profile-image.png"
+              alt="Imagem do Perfil"
+            />
+          </a>
+        </div>
+      </div>
     </header>
 
-        <div class="new-post-frame">
-            <div id="new-post-frame-header">
-                <h4>Edição de Evento Cultural</h4>
-                <a id="close-icon" onclick=closePostForm()>
-                    <img src="./images/close.png" alt="Botão de Fechar">
-                </a>
-            </div>
-            <div class="new-post-frame-register">
-                <h3 id="new-post-frame-title-text">Titulo</h3>
-                <input id="new-post-frame-title" type="text">
+    <!-- Div da funcionalidade de edição dos posts. Ela está sempre oculta, somente é visivel quando o usuário pressiona o botão de "Editar" -->
+    <div class="edit-post-frame">
+      <div id="edit-post-frame-header">
+        <h4>Edição de Evento Cultural</h4>
+        <a id="close-icon" onclick="closePostFrame()">
+          <img src="./images/close.png" alt="Botão de Fechar" />
+        </a>
+      </div>
+      <div class="edit-post-frame-register">
+        <h3 id="edit-post-frame-title-text">Titulo</h3>
+        <input id="edit-post-frame-title" type="text" />
 
-                <h3 id="new-post-frame-description-text">Descrição</h3>
-                <textarea name="post-description" id="new-post-frame-description-textarea" cols="170" rows="15"></textarea>
+        <h3 id="edit-post-frame-description-text">Descrição</h3>
+        <textarea
+          name="post-description"
+          id="edit-post-frame-description-textarea"
+          cols="170"
+          rows="15"
+        ></textarea>
 
-                <h3 id="new-post-frame-city-text">Cidade do evento</h3>
-                <input id="new-post-frame-city" type="text">
+        <h3 id="edit-post-frame-city-text">Cidade do evento</h3>
+        <input id="edit-post-frame-city" type="text" />
 
-                <h3 id="new-post-frame-date-text">Data do evento</h3>
-                <input id="new-post-frame-date" type="date">
-            </div>
+        <h3 id="edit-post-frame-date-text">Data do evento</h3>
+        <input id="edit-post-frame-date" type="date" />
+      </div>
 
-            <div class="new-post-frame-footer">
-                <button id="new-post-frame-delete-button">Excluir post</button>
-                <button id="edit-post-button">Editar Post</button>
-            </div>
-
-        </div>
-
-    <div class="post-container">
-        <div id="post-container-left">
-            <h1 id="post-title"></h1>
-            <p id="post-description"></p>
-        </div>
-
-        <div id="post-container-right">
-            <img id="post-image" alt="Imagem do post">
-            <button onclick=showEventContainer()>EVENTO</button>
-            <button onclick=showContactContainer()>CONTATO</button>
-            <button onclick=photoPageRedirect()>FOTOS</button>
-        </div>
-
-        <div id="event-container">
-            <div class="event-header">
-                <h1>Evento</h1>
-                <a id="arrow-back" onclick=closeEventContainer()>
-                    <img src="./images/arrow-back.png" alt="Seta de voltar">
-                </a>
-            </div>
-            
-            <div id="upper-container">
-                <h2>Info</h2>
-                <p>Informações da cultura acessada, é possível visualizar cidade e a data determinada pelo autor. Na seção inferior
-                    é habilitado a seção de comentários, na qual, podem ser postados.
-                </p>
-            </div>
-
-        </div>
-
-        <div id="contact-container">
-            <div class="contact-header">
-                <h1>Contato</h1>
-                <a id="arrow-back" onclick=closeContactContainer()>
-                    <img src="./images/arrow-back.png" alt="Seta de voltar">
-                </a>
-            </div>
-            
-            <div id="contact-upper-container">
-                <h2>Info</h2>
-                <p>Nas informações abaixo é possível consultar os dados da ONG criadora do post da cultura.
-                </p>
-            </div>
-        </div>
+      <div class="edit-post-frame-footer">
+        <button id="edit-post-frame-delete-button">Excluir post</button>
+        <button id="edit-post-button">Editar Post</button>
+      </div>
     </div>
 
+    <!-- Container com informações extras da cultura, possue alguns botões para visualização de infos a mais -->
+    <div class="post-container">
+      <div id="post-container-left">
+        <h1 id="post-title"></h1>
+        <p id="post-description"></p>
+      </div>
+
+      <div id="post-container-right">
+        <img id="post-image" alt="Imagem do post" />
+        <button onclick="showEventContainer()">EVENTO</button>
+        <button onclick="showContactContainer()">CONTATO</button>
+        <button onclick="photoPageRedirect()">FOTOS</button>
+      </div>
+
+      <!-- Se clicado no botão "Evento", mostra o container abaixo com informações do evento -->
+      <div id="event-container">
+        <div class="event-header">
+          <h1>Evento</h1>
+          <a id="arrow-back" onclick="closeEventContainer()">
+            <img src="./images/arrow-back.png" alt="Seta de voltar" />
+          </a>
+        </div>
+
+        <div id="upper-container">
+          <h2>Info</h2>
+          <p>
+            Informações da cultura acessada, é possível visualizar cidade e a
+            data determinada pelo autor. Na seção inferior é habilitado a seção
+            de comentários, na qual, podem ser postados.
+          </p>
+        </div>
+      </div>
+
+      <!-- Se clicado no botão "Contato", mostra o container abaixo com as informações da ONG criadora do post -->
+      <div id="contact-container">
+        <div class="contact-header">
+          <h1>Contato</h1>
+          <a id="arrow-back" onclick="closeContactContainer()">
+            <img src="./images/arrow-back.png" alt="Seta de voltar" />
+          </a>
+        </div>
+
+        <div id="contact-upper-container">
+          <h2>Info</h2>
+          <p>
+            Nas informações abaixo é possível consultar os dados da ONG criadora
+            do post da cultura.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts que são importados para funções da página -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <script src="./scripts/supabase.js"></script>
     <script src="./scripts/post-detail.js"></script>
     <script src="./scripts/culture-edit.js"></script>
     <script src="./scripts/notifications.js"></script>
-</body>
+  </body>
 </html>

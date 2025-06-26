@@ -1,78 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/ongs-main-page.css">
-    <link href="https://fonts.cdnfonts.com/css/product-sans" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/notifications.css">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Import da estilização da página -->
+    <link rel="stylesheet" href="./styles/ongs-main-page.css" />
+    <link rel="stylesheet" href="./styles/notifications.css" />
+    <link href="https://fonts.cdnfonts.com/css/product-sans" rel="stylesheet" />
+    <link rel="icon" type="image/icon-x" href="./images/logo-simples.png" />
+    <!-- Icone da página -->
+
     <title>+Cultura | ONG</title>
-    <link rel="icon" type="image/icon-x" href="./images/logo-simples.png">
-</head>
-<body>
+  </head>
+  <body>
+    <!-- Header padrão das páginas, contém a logo, botão para voltar a Home, barra de pesquisa e perfil do usuário -->
     <header>
-        <div class="page-header">
-            <div class="header-left">
-                <div class="div-logo-image">
-                    <img id="logo-image" src="./images/logo.png" alt="Logo +Cultura;">
-                </div>
-                <div class="header-text">
-                    <a href="ongs-main-page.html">Home</a>
-                </div>
-            </div>
-
-            <div class="header-right">
-                <button id="new-ong-post-button" onclick="showPostForm()">Nova publicação</button>
-                <form class="search-form" action="#">
-                    <input type="text">
-                    <button type="submit">
-                        <img id="search-image" src="./images/search-image.png" alt="Buscar">
-                    </button>
-                </form>
-                <a id="profile-href" href="profile-edit.html">
-                    <img id="profile-image" src="./images/profile-image.png" alt="Imagem do Perfil">
-                </a>
-            </div>
-
+      <div class="page-header">
+        <div class="header-left">
+          <div class="div-logo-image">
+            <img id="logo-image" src="./images/logo.png" alt="Logo +Cultura;" />
+          </div>
+          <div class="header-text">
+            <a href="ongs-main-page.html">Home</a>
+          </div>
         </div>
+
+        <div class="header-right">
+          <!-- Botão de cadastro de postagem, somente ONGs logadas podem realizar tal ação -->
+          <button id="new-ong-post-button" onclick="showPostForm()">
+            Nova publicação
+          </button>
+          <form class="search-form" action="#">
+            <input type="text" />
+            <button type="submit">
+              <img
+                id="search-image"
+                src="./images/search-image.png"
+                alt="Buscar"
+              />
+            </button>
+          </form>
+          <a id="profile-href" href="profile-edit.html">
+            <img
+              id="profile-image"
+              src="./images/profile-image.png"
+              alt="Imagem do Perfil"
+            />
+          </a>
+        </div>
+      </div>
     </header>
     <main>
-        <div class="new-post-frame">
-            <div id="new-post-frame-header">
-                <h4>Cadastro de Evento Cultural</h4>
-                <a id="close-icon" onclick=closePostForm()>
-                    <img src="./images/close.png" alt="Botão de Fechar">
-                </a>
-            </div>
-            <div class="new-post-frame-register">
-                <h3 id="new-post-frame-title-text">Titulo</h3>
-                <input id="new-post-frame-title" type="text">
-
-                <h3 id="new-post-frame-description-text">Descrição</h3>
-                <textarea name="post-description" id="new-post-frame-description-textarea" cols="170" rows="15"></textarea>
-
-                <h3 id="new-post-frame-city-text">Cidade do evento</h3>
-                <input id="new-post-frame-city" type="text">
-
-                <h3 id="new-post-frame-date-text">Data do evento</h3>
-                <input id="new-post-frame-date" type="date">
-            </div>
-
-            <div class="new-post-frame-footer">
-                <label id="new-post-frame-image-label" for="new-post-frame-image">Enviar imagem</label>
-                <input id="new-post-frame-image" type="file" accept="image/*">
-                <button id="create-post-button">Criar post</button>
-            </div>
-
+      <!-- Janela de criação de post, é aberta quando clicado no botão "Nova Publicação" -->
+      <div class="new-post-frame">
+        <div id="new-post-frame-header">
+          <h4>Cadastro de Evento Cultural</h4>
+          <a id="close-icon" onclick="closePostForm()">
+            <img src="./images/close.png" alt="Botão de Fechar" />
+          </a>
         </div>
-        <div class="page-main">
+        <div class="new-post-frame-register">
+          <h3 id="new-post-frame-title-text">Titulo</h3>
+          <input id="new-post-frame-title" type="text" />
+
+          <h3 id="new-post-frame-description-text">Descrição</h3>
+          <textarea
+            name="post-description"
+            id="new-post-frame-description-textarea"
+            cols="170"
+            rows="15"
+          ></textarea>
+
+          <h3 id="new-post-frame-city-text">Cidade do evento</h3>
+          <input id="new-post-frame-city" type="text" />
+
+          <h3 id="new-post-frame-date-text">Data do evento</h3>
+          <input id="new-post-frame-date" type="date" />
         </div>
+
+        <div class="new-post-frame-footer">
+          <label id="new-post-frame-image-label" for="new-post-frame-image"
+            >Enviar imagem</label
+          >
+          <input id="new-post-frame-image" type="file" accept="image/*" />
+
+          <button id="create-post-button">Criar post</button>
+        </div>
+      </div>
+      <!-- Div das postagens, fica vazia, pois é preenchida no JavaScript -->
+      <div class="page-main"></div>
     </main>
+
+    <!-- Scripts que são importados para funções da página -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <script src="./scripts/supabase.js"></script>
     <script src="./scripts/ongs-main-page.js"></script>
     <script src="./scripts/culture-registry.js"></script>
     <script src="./scripts/notifications.js"></script>
-</body>
+  </body>
 </html>

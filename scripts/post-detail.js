@@ -1,8 +1,7 @@
 let currentPost = null;
-const editPostFrame = document.querySelector('.new-post-frame');
+const editPostFrame = document.querySelector('.edit-post-frame');
 const eventContainer = document.querySelector('#event-container');
 const postContainerRight = document.querySelector('#post-container-right');
-const postForm = document.querySelector('.new-post-frame');
 const header = document.querySelector('.page-header');
 const pageMain = document.querySelector('.post-container');
 const contactContainer = document.querySelector('#contact-container');
@@ -128,8 +127,8 @@ window.onload = () => {
         window.location.href = 'photos.html';
     }
 
-    window.closePostForm = function () {
-        postForm.style.display = 'none';
+    window.closePostFrame = function () {
+        editPostFrame.style.display = 'none';
         header.style.filter = 'blur(0)';
         pageMain.style.filter = 'blur(0)';
     }

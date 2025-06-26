@@ -1,55 +1,71 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/photos.css">
-    <link href="https://fonts.cdnfonts.com/css/product-sans" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Import da estilização da página -->
+    <link rel="stylesheet" href="./styles/photos.css" />
+    <link href="https://fonts.cdnfonts.com/css/product-sans" rel="stylesheet" />
+    <link rel="icon" type="x-icon" href="./images/logo-simples.png" />
+    <!-- Icone da página -->
 
     <title>+Cultura | Fotos</title>
-    <link rel="icon" type="x-icon" href="./images/logo-simples.png">
-</head>
-<body>
+  </head>
+  <body>
+    <!-- Header padrão das páginas, contém a logo, botão para voltar a Home, barra de pesquisa e perfil do usuário -->
     <header>
-        <div class="page-header">
-            <div class="header-left">
-                <div class="div-logo-image">
-                    <img id="logo-image" src="./images/logo.png" alt="Logo +Cultura;">
-                </div>
-                <div class="header-text">
-                    <a href="ongs-main-page.html">Home</a>
-                </div>
-            </div>
-
-            <div class="header-right">
-                <form class="search-form" action="#">
-                    <input type="text">
-                    <button type="submit">
-                        <img id="search-image" src="./images/search-image.png" alt="Buscar">
-                    </button>
-                </form>
-                <a id="profile-href" href="/profile-edit.html">
-                    <img id="profile-image" src="./images/profile-image.png" alt="Imagem do Perfil">
-                </a>
-            </div>
+      <div class="page-header">
+        <div class="header-left">
+          <div class="div-logo-image">
+            <img id="logo-image" src="./images/logo.png" alt="Logo +Cultura;" />
+          </div>
+          <div class="header-text">
+            <a href="ongs-main-page.html">Home</a>
+          </div>
         </div>
+
+        <div class="header-right">
+          <form class="search-form" action="#">
+            <input type="text" />
+            <button type="submit">
+              <img
+                id="search-image"
+                src="./images/search-image.png"
+                alt="Buscar"
+              />
+            </button>
+          </form>
+          <a id="profile-href" href="/profile-edit.html">
+            <img
+              id="profile-image"
+              src="./images/profile-image.png"
+              alt="Imagem do Perfil"
+            />
+          </a>
+        </div>
+      </div>
     </header>
 
+    <!-- TODO: Implementar sistema de inclusão de imagens. Atualmente são inseridas imagens padrões -->
     <div class="page-main">
-        <a id="close-icon" onclick=backButton()>
-            <img src="./images/close.png" alt="Botão de Fechar">
-        </a>
-        <div class="post-div">
-            <img src="./images/logo-simples.png" alt="Imagem">
-            <img src="./images/logo-tons-azuis.png" alt="Imagem">
-            <img src="./images/logo-simples.png" alt="Imagem">
-            <img src="./images/profile-image.png" alt="Imagem">
-            <img src="./images/logo-simples.png" alt="Imagem">
-            <img src="./images/logo-tons-azuis.png" alt="Imagem">
-            <img src="./images/logo-simples.png" alt="Imagem">
-            <img src="./images/profile-image.png" alt="Imagem">
-        </div>
+      <a id="close-icon" onclick="backButton()">
+        <img src="./images/close.png" alt="Botão de Fechar" />
+      </a>
+      <!-- Imagens aleatórias para simular uma biblioteca de fotos de uma determinada cultura -->
+      <div class="post-div">
+        <img src="./images/logo-simples.png" alt="Imagem" />
+        <img src="./images/logo-tons-azuis.png" alt="Imagem" />
+        <img src="./images/logo-simples.png" alt="Imagem" />
+        <img src="./images/profile-image.png" alt="Imagem" />
+        <img src="./images/logo-simples.png" alt="Imagem" />
+        <img src="./images/logo-tons-azuis.png" alt="Imagem" />
+        <img src="./images/logo-simples.png" alt="Imagem" />
+        <img src="./images/profile-image.png" alt="Imagem" />
+      </div>
     </div>
+
+    <!-- Scripts que são importados para funções da página -->
     <script src="./scripts/photos.js"></script>
-</body>
+  </body>
 </html>

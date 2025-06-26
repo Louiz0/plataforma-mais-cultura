@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Import da estilização da página -->
     <link rel="stylesheet" href="./styles/profile-edit.css">
     <link rel="stylesheet" href="./styles/notifications.css">
     <link href="https://fonts.cdnfonts.com/css/product-sans" rel="stylesheet">
+    <link rel="icon" type="x-icon" href="./images/logo-simples.png"> <!-- Icone da página -->
 
     <title>+Cultura | Login</title>
-    <link rel="icon" type="x-icon" href="./images/logo-simples.png">
 </head>
 <body>
+    <!-- Header padrão das páginas, contém a logo, botão para voltar a Home, barra de pesquisa e perfil do usuário -->
     <header>
         <div class="page-header">
             <div class="header-left">
@@ -27,6 +30,7 @@
         </div>
     </header>
 
+    <!-- Div com os campos de que possibilitam a alteração dos dados -->
     <div class="page-main">
         <div class="login-container">
             <div class="login-header">
@@ -49,6 +53,8 @@
             </form>
         </div>
     </div>
+    
+    <!-- Scripts que são importados para funções da página -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <script src="./scripts/supabase.js"></script>
     <script src="./scripts/profile-edit.js"></script>
