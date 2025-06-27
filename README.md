@@ -11,10 +11,10 @@ Este projeto possibilita com que as pessoas possam acessar conteúdos e artigos 
 
 • As seguintes tecnologias foram empregadas:  
 · Frontend desenvolvido em HTML5, CSS3 e JavaScript;  
-· Banco de dados em PostgreSQL hospedado no Supabase, onde permite maior escalabilidade para o projeto;
-· Bucket do Supabase para armazenamento das imagens;
-· Comunicação com o Supabase ocorre através de códigos com JavaScript;
-· Hospedagem e deploy na Vercel, além da configuração de _environment variables_ com a URL e chaves do Banco de Dados, garantindo maior segurança.
+· Banco de dados em PostgreSQL hospedado no Supabase, onde permite maior escalabilidade para o projeto;  
+· Bucket do Supabase para armazenamento das imagens;  
+· Comunicação com o Supabase ocorre através de códigos com JavaScript;  
+· Hospedagem e deploy na Vercel, além da configuração de _environment variables_ com a URL e chaves do Banco de Dados, garantindo maior segurança.  
 
 Para acessar a aplicação web basta acessar o website contido no "About" deste repositório.
 
