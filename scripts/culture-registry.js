@@ -77,9 +77,18 @@ document.getElementById('create-post-button')?.addEventListener('click', async (
     } else {
         notifications.show("Post criado com sucesso!", "success");
         closePostForm();
+        clearPostFields();
         loadPosts();
     }
 });
+
+function clearPostFields() {
+    document.getElementById('new-post-frame-title').value = '';
+    document.getElementById('new-post-frame-description-textarea').value = '';
+    document.getElementById('new-post-frame-image').value = '';
+    document.getElementById('new-post-frame-city').value = '';
+    document.getElementById('new-post-frame-date').value = '';
+}
 
 async function loadPosts() {
     const { data: posts, error} = await supabaseClient
