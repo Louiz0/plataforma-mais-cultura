@@ -53,4 +53,31 @@ CREATE TABLE posts (
 )
 ```
 
-Através do Visual Studio Code com a extensão _Live Server_ será possível rodar localmente o projeto.
+Através do Visual Studio Code com a extensão _Live Server_ será possível rodar localmente o projeto.  
+
+# Imagens
+### Index.html
+Esta é a pagina inicial do usuário, na qual, a ONG precisa se autenticar ou se for um visitante, apenas entrar como visitante.
+![image](https://github.com/user-attachments/assets/76e2eca2-938e-4ac3-8ea7-083624a355d9)
+
+### Ongs-main-page.html
+Nesta página são disponibilizadas as postagens feitas pelas ONGs, neste projeto, apenas as ONGs que criaram cada evento podem editar as suas respectivas postagens, além disso, visitantes apenas podem visualizar, não podem editar.
+![image](https://github.com/user-attachments/assets/800a4463-be0b-455b-9b35-95ba33bdba4e)
+
+### Criação de Posts na Ongs-main-page.html
+![image](https://github.com/user-attachments/assets/5d7a56b0-88d0-4d7c-9889-2e63d1e44954)
+
+### Post-detail.html
+No menu a direita é possível abrir mais informações sobre a postagem.
+![image](https://github.com/user-attachments/assets/4d7dc2af-c4ab-4634-94c2-e126cd62c1c1)
+
+### Edição e exclusão de Posts no post-detail.html
+![image](https://github.com/user-attachments/assets/c80a7473-e774-4e1c-a2bd-e51e4b632480)
+
+### Profile-edit.html
+Somente usuários autenticados conseguem acessar esta página e mudar os dados de seu próprio perfil.
+![image](https://github.com/user-attachments/assets/d1363884-6e51-4db1-b8ca-61eb41ec8bb4)
+
+
+
+
